@@ -1,0 +1,395 @@
+/* Tipos de fuente / Tipos de letra */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lustria&family=Playball&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Prata&family=Roboto:wght@300;400;500&display=swap');
+
+/* Selector universal */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del documento 
+    - Tipo de letra "Roboto" 
+    - Tamaño de fuente: 16px
+    - interlineado: 1.5 */
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* quiero que las secciones tengan un padding de 20px
+    aariba, abajo y 0 hacia los lados. Es decir, 
+    que empuje arriba y abajo. */
+
+section {
+    padding: 5px 0;
+}
+
+/* El header va a tener la prpiedad flex, por que quiero que
+    todo este dentro del header se vea afectado, es decir, el logo. */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quiero que todos los elementos que tengan es clase, se ajusten
+al medio de la pagina, siendo este un contenedor
+    
+    - Quiero que tenga un ancho del 85% del navegador
+
+    - Quiero que tenga un margen de 0 arriba, abajo y que calcule de manera automatica los lados.
+    (Es decir, que si restamos 100 - 85, nos da un resultado de 15, siendo este el 
+    espacio restante que el margen (margin) tomara de forma automatica 
+
+    - Quiero que el contenedor no se extienda mas y consever su tamaño pasando los 1200px
+*/
+
+.wrapper {
+    width: 85%;  /* Toma el 85% del 100% del navegador */
+    margin: 0 auto; /* Ten un margen de 0 arriba y abajo. Automatico a los lados con el espacio restante (15%) */
+    max-width: 1200px;  /* Que el contenedor tenga anchura maxima de 1200px */
+}
+
+/*
+
+    ANIMACION DE GRADIENTES EN EL FONDO DEL HEADER.
+
+    Se puso una clase al header en donde se le va a dar todas las propiedades 
+    y dentro del header solamente se pusieron los elementos necesarios. En este 
+    caso es el logo de Apex Legends.
+
+*/
+
+.gradient-background {
+    /* Quiero que abarque todo el ancho de la pantalla */
+    width: 100%;
+    /* Quiero que el background tenga un gradiente  que tenga 3 colores 
+    y tenga un inico inclinado ( Pueden existir una gran cantidad de colors dentro de esta linea de codigo)*/
+    background: linear-gradient(62deg, #f97b2e, #b93038, #a4373d);
+    /*  Declarar funcion de la animacion, la animacion se llama "gradient"
+    tiene 15 segundos de duracion, que tenga una entrada suave y que tenga
+    repeticion infinita. */
+    animation: gradient 15s ease infinite;
+    /* Quiero que la anicmacion tenga un tamaño de 500% 500% */
+    background-size: 500% 500%;
+
+}
+
+/*
+
+    WEBKIT - ES UNA HERRAMIENTA QUE SE USA DARLE SOPORTE A LOS NAVEGADORES
+    QUE NO AGUANTAN LAS NUEVAS FUNCIONALIDADES. ESTOS NAVEGADORES SON
+
+        OPERA
+        SAFARI
+        INTERNET EXPLORER
+
+*/
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Creo la animacion que declare en la parte superior */
+@keyframes gradient {
+    /* Quiero que en su posicion 0 */
+    0% {
+        background-position: 0 50%;
+    }
+
+    /* Quiero que en su posicion media */
+    50% {
+        background-position: 100% 50%;
+    }
+
+    /* Quiero que en su posicion completa */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*
+    ESTILOS AL SVG
+*/
+
+.logo {
+    /* qUIERO QUE EL LOGO EMPUJE EL CONTENIDO ARRIBA Y ABAJO 5% Y 0 HACIA LOS LADOS*/
+    padding: 5% 0;
+    /* QUIERO QUE LA IMAGEN TENGA UN TAMAÑO DEL 50%  DE SU CONTENEDOR */
+    width: 20%;
+}
+
+img {
+    /* QUIERO QUE LA IMAGEN TENGA EL TAMAÑO REAL */
+    width: 100%;
+    /* QUIERO QUE LA IMAGEN NO CRESCA MAS DE 1200px */
+    max-width: 1200px;
+}
+
+
+
+g { 
+    /* Declaro la funcion de la animacion en donde 
+    mi animacion se llama fadeIn, va a tener una duracion
+    de 2 segundos y tendra una entrada suave al inicio, 
+    en este caso la animacion no tendra una repeticion infinita como
+    el fondo gradiente */
+    animation: fadeIn 2s ease-in;
+    /* Quiero que el color de mi SVG tenga un color blanco */
+    fill: white;
+}
+
+/* Creo la animacion de aparecer  */
+@keyframes fadeIn {
+    /* Quiero que la animacion en su inicio tenga una
+    opcidad de 0, es decir, que sea transparente   */
+    0% {
+        opacity: 0;
+    }
+
+    /* En su punto medio, quiero que mi animacion tenga
+    un color blanco semi transparente  */
+    50% {
+        opacity: .5;
+    }
+
+    /* En su punto maximo, quiero que mi animacion ya no
+    tenga una opcidad, ni transparencia, poniendo el color
+    completo  */
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos generales a la seccion acerca de */
+
+.acerca-de {
+    /* Quiero que esta seccion tenga como fondo 
+    la siguiente imagen  */
+    background-image: url("textura.jpg");
+    /* Quiero que esta imagen no se repita dentro de
+    la seccion  */
+    background-repeat: no-repeat;
+    /* Encaja en todo el espacio disponible que tenga 
+    la seccion */
+    background-size: cover;
+    /* Posicionate de manera fija dentro de la seccion */
+    background-attachment: fixed;
+    /* Empuja el contenido 2% arriba y abajo, 0 hacia los lados */
+    padding: 2% 0;
+}
+
+/* Contenedor del contenido y elemento flexbox padre */
+
+.content {
+    /* Toma todo el ancho posible */
+    width: 100%;
+    /* Dale la propiedad flex a los elementos hijos */
+    display: flex;
+    /* Alinea los elementos al centro de forma horizontal */
+    justify-content: center;
+    /* Alinea los elementos al centro de forma vertical  */
+    align-items: center;
+    /* Separacion entre los elementos */
+    gap: 80px;
+}
+
+/* Todos los elementos que esten dentro del div class ="img" se veran afectados
+    La etiqueta "img" dentro del html*/
+/* Dividimos el contenido del lado izquierdo a la mitad */
+.img { 
+    width: 50%; 
+    /* Colocamos un webkit para dar soporte a los navegadores desactualizados  */
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    /* Aplicamos un filtro de sombra, en donde con el primer valor
+    recomeremos 5px hacia la derecha, con el segundo valor recorremos hacia abajo 5px y
+    el ultimo valor definimos la exparcion de 5px de la sombra (defuminado),
+    Seguido el añadido de color que nosotros queramos que tenga la sombra */
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+/* Todos los elementos que esten dentro del div class ="info" se veran afectados
+    La etiqueta "h2", "h5", "p" y "button" dentro del html*/
+/* Dividimos el contenido del lado derecho a la mitad */
+.info { 
+    /* Empuja a los elelentos hacia dentro desde todos los lados*/
+    padding: 3%; 
+    /* Toma la mitad del contenido de la seccion completa */
+    width: 50%; 
+    /* OBten ese color de fondo*/
+    background-color: #F2F2F2;
+    /* Dale una propieda de borde con las siguientes prpiedades
+    Quiero que tenga 8px de grosor, que sea un borde solido y que tenga un color
+    Rojiso */
+    border: 8px solid #b93038;
+    /* Le damos un efecto de sombras en donde intertamos los valores siguientes
+    en el orden que se presentan
+        1.- Longitud de manera horizontal 
+        2.- Longitud de manera vertical
+        3.- blur  de la sombra (difuminado)
+        4.- Prograpagacion de la sombara 
+        5.- Color de la sombra con una ligera tranparencia
+         */
+    -webkit-box-shadow: 33px 34px 26px -17px rgba(164,55,61,1);
+    -moz-box-shadow: 33px 34px 26px -17px rgba(164,55,61,1);
+    box-shadow: 33px 34px 26px -17px rgba(164,55,61,1);
+}
+
+/* Quiero que todas las imagenes que tengan esta clase dentro de su etiqueta, se vean afectadas, 
+    de la siguiente manera. Quiero que las imagenes tengan su tamaño real dentro de cualquier contener 
+    definidio por el usuario */
+    /* Es decir que si el contenedor padre tiene un ancho de 80%, el 100% de la imagen con esta clase sera de 80%*/
+    .img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos generales a los elementos que tengan la clase titulo */
+/* Tipos de letra
+    Tamño de letra
+    transparencia de la letra
+    espacio entre letras
+    color de letra */
+
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 150px;
+    opacity: .8;
+    letter-spacing: 1px;
+    color: #b93038;
+}
+
+/* Estilos generales a los elementos que tengan la clase subtitlo  */
+/* Tipos de letra
+    peso de la letra
+    Tamño de letra
+    espacio entre letras
+    color de letra con ligera transparencia */
+
+.subtitulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos generales a los elementos que tengan la clase parrafo  */
+/*  peso de la letra
+    Tamño de letra
+    color de letra con ligera transparencia */
+
+.parrafo {
+    font-size: 17px;
+    color: rgba(0, 0, 0, .8);
+    font-weight: normal;
+}
+
+/* Estilos generales al botton */
+.btn {
+    /* Color de fondo transparente  */
+    background: transparent;
+    /* Color de letra  */
+    color: #b93038;
+    /* Color de borde, con 3.5px de grosor y que sea solido */
+    border: 3.5px solid #b93038;
+    /* Muevan al boton de arriba y abajo 30px y 0 a los lados */
+    margin: 30px 0;
+    /* Empuja el contenido del boton 15px de aaroba y abajo, 30px hacia los lados*/
+    padding: 15px 30px;
+    /* Peso de letra mas fuerte  */
+    font-weight: bold;
+    /* Tamaño a la letra */
+    font-size: 16px;
+    /* Espacio entre letras  */
+    letter-spacing: 2px;
+    /* Cada que el mouse pase por el boton el cursor va a cambiar */
+    cursor: pointer;
+    /* Agrega una pequeña transicion que afecte todo el boton, dure 1 segundo y que tenga una entrada bezier*/
+    /* La propiedad Cubic bezier, ya viene predefinida en visual studio, solo consta con poner cubic y nos arrojara multiples opciones
+    que podemos poner */
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Estilos generales al botton cando el mouse pasa sobre el  */
+.btn:hover {
+    /* Cambia el color de fondo */
+    background: #b93038;
+    /* Cambia el color de la letra */
+    color: #FFFFFF;
+    /* Sube el el boton en el eje de las Y (osea desplazalo hacia arriba) -5px */
+    transform: translateY(-5px);
+    /* Agrega una pequeña transicion que afecte todo el boton, dure 1 segundo y que tenga una entrada bezier*/
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/*
+
+    Estilos en dispositivos mas pequeños 
+
+*/
+
+/* Pantallas de celulares */
+@media only screen and (max-width: 600px) {
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titulo {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titulo {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
